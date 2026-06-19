@@ -60,12 +60,27 @@ const TabStack = () => {
                         iconName = focused ? 'settings' : 'settings-outline';
                     }
                     return (
-                    <View style={styles.tabContainer}>
-                        <Ionicons
-                            name={iconName as any}
-                            size={scale(focused ? 25 : 23)}
-                            color={focused ? Colors.white : Colors.icon}
-                        />
+                    <View
+                        style={[
+                            styles.tabContainer,
+                            route.name === 'AddScreen' && styles.addButtonContainer
+                        ]}
+                    >
+                    <Ionicons
+                        name={iconName as any}
+                        size={
+                            route.name === 'AddScreen'
+                                ? scale(32)
+                                : scale(focused ? 25 : 23)
+                        }
+                        color={
+                            route.name === 'AddScreen'
+                                ? Colors.white
+                                : focused
+                                ? Colors.white
+                                : Colors.icon
+                        }
+                    />
                     </View>
             );
         },
