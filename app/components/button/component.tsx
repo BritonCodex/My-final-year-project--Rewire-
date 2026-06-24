@@ -12,7 +12,7 @@ const Button = ({
 }: IButtonProps) =>{
     const styles = createButtonStyles();
     return(
-        <Pressable style={[styles.container, buttonStyles]}>
+        <Pressable onPress={onPress} style={[styles.container, buttonStyles]}>
             {component}
             <Text style={[styles.text, textStyles]}>{text}</Text>
         </Pressable>
